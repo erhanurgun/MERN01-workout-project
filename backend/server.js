@@ -16,8 +16,8 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/v1/workouts", workoutRoutes);
-app.use("/api/v1/user", userRoutes);
+app.use(process.env.BASE_URL + "/api/v1/workouts", workoutRoutes);
+app.use(process.env.BASE_URL + "/api/v1/user", userRoutes);
 
 // connet to db
 mongoose
@@ -30,5 +30,6 @@ mongoose
 
 // listen for requests
 app.listen(process.env.PORT, () => {
-    console.log(`Sunucu http://localhost:${process.env.PORT} adresinde çalışıyor.`);
+    // console.log(`Sunucu http://localhost:${process.env.PORT} adresinde çalışıyor.`);
+    console.log(`Sunucu ${process.env.BASE_URL} adresinde çalışıyor.`);
 });
