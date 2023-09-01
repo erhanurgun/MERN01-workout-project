@@ -37,6 +37,7 @@ const Home = () => {
     return (
         <div className="home">
             <div className="workouts">
+                {workouts && <h3 className="head-text">Mevcut Egzersizler</h3>}
                 {!workouts && <div className="loading">Yükleniyor...</div>}
                 {workouts &&
                     workouts.map((workout) => (

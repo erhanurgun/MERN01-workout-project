@@ -7,6 +7,10 @@
     .powered-by {
         position: fixed;
     }
+
+    .home .workouts {
+        max-height: calc(100vh - 144px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -45,6 +49,11 @@
     .powered-by span:first-child {
         display: none;
     }
+
+    .home .workouts {
+        max-height: calc(70vh - 144px);
+        margin-bottom: 60px;
+    }
 }
 
 /* Renkler ve Temel Stiller */
@@ -58,6 +67,20 @@
     --black-2: rgba(0, 0, 0, 0.05);
     --gray: #555;
     --silver: #ddd;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--primary), var(--error));
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 /* Genel Stiller */
@@ -111,19 +134,38 @@ header .head h2.logo {
 
 /* Ana Sayfa */
 .home {
-    display: grid;
     grid-template-columns: 3fr 1fr;
-    gap: 100px;
+    display: grid;
+    gap: 44px;
+}
+
+.home .workouts .head-text {
+    background: linear-gradient(45deg, var(--primary), var(--error));
+    text-shadow: 2px 2px 5px var(--black-2);
+    font-family: "Poppins", sans-serif;
+    color: var(--white-1);
+    border-radius: 4px;
+    text-align: center;
+    padding: 3px 15px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 0;
+    opacity: 0.8;
 }
 
 .workout-details {
     background: var(--white-1);
     border-radius: 4px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
     position: relative;
     box-shadow: 2px 2px 5px var(--black-2);
     border: 1px dashed var(--primary);
+    margin-top: -17px;
+}
+
+.workout-details:not(:last-child) {
+    margin-bottom: 25px;
 }
 
 .workout-details h4 {
@@ -207,7 +249,9 @@ div.error {
     border: 1px solid var(--error);
     color: var(--error);
     border-radius: 4px;
-    margin: 20px 0;
+    margin-top: 44px;
+    width: 111%;
+    margin-left: -10%;
 }
 
 .del {
@@ -263,6 +307,8 @@ form.login h3 {
     border-radius: 4px;
     padding: 20px 25px;
     background-color: var(--white-1);
+    height: 335px;
+    margin-bottom: 52px;
 }
 
 .create h3 {
@@ -331,4 +377,9 @@ form.login h3 {
 
 .powered-by a:hover {
     color: var(--error);
+}
+
+.home .workouts {
+    padding-right: 7px;
+    overflow-y: scroll;
 }
