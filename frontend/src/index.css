@@ -1,0 +1,326 @@
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round:wght@300;400;500;600;800&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .powered-by {
+        position: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    header.fixed-header {
+        background-color: var(--white-1) !important;
+        position: fixed !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        top: -18px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 84px !important;
+    }
+
+    header .container {
+        padding: 10px 20px !important;
+    }
+
+    header .container .navbar .email {
+        display: none !important;
+    }
+
+    .pages {
+        margin-top: 55px !important;
+    }
+
+    .home,
+    .create {
+        grid-template-columns: 1fr !important;
+    }
+
+    .create {
+        margin-top: -88px !important;
+    }
+
+    .powered-by span:first-child {
+        display: none;
+    }
+}
+
+/* Renkler ve Temel Stiller */
+:root {
+    --primary: #2695EC;
+    --error: #e7195a;
+    --error-opaque: rgba(231, 25, 90, 0.05);
+    --white-1: #fff;
+    --white-2: #f6f6f6;
+    --black-1: #333;
+    --black-2: rgba(0, 0, 0, 0.05);
+    --gray: #555;
+    --silver: #ddd;
+}
+
+/* Genel Stiller */
+body {
+    background: var(--white-2);
+    margin: 0;
+    font-family: "Varela Round", sans-serif;
+}
+
+/* Header */
+header {
+    background: var(--white-1);
+    box-shadow: 0 2px 5px var(--black-2);
+}
+
+header .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+}
+
+header .container .navbar .email {
+    margin-right: 20px;
+}
+
+header .head h2.logo {
+    background: linear-gradient(45deg, var(--primary), var(--error));
+    text-shadow: 2px 2px 5px var(--black-2);
+    font-family: "Poppins", sans-serif;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Sayfa İçerikleri */
+.pages {
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Ana Sayfa */
+.home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 100px;
+}
+
+.workout-details {
+    background: var(--white-1);
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 2px 5px var(--black-2);
+    border: 1px dashed var(--primary);
+}
+
+.workout-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--primary);
+}
+
+.workout-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--gray);
+}
+
+.workout-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: var(--white-2);
+    padding: 6px;
+    border-radius: 50%;
+    color: var(--black-1);
+}
+
+/* Yeni Egzersiz Formu */
+label,
+input {
+    display: block;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid var(--silver);
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid var(--primary);
+}
+
+input.error {
+    border: 1px solid var(--error);
+    background-color: var(--error-opaque);
+}
+
+button {
+    background: linear-gradient(45deg, var(--primary), var(--error));
+    border: 0;
+    color: var(--white-1);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+}
+
+button:hover {
+    background: linear-gradient(45deg, var(--error), var(--primary));
+    color: var(--white-1);
+    transition: ease-in 100ms;
+    opacity: 0.8;
+}
+
+button.btn-logout {
+    width: auto;
+}
+
+.btn {
+    margin-right: 20px;
+}
+
+div.error {
+    padding: 10px;
+    background: var(--error-opaque);
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.del {
+    background: var(--error) !important;
+    border: 1px solid var(--error) !important;
+    color: var(--white-2) !important;
+    opacity: 0.8;
+}
+
+:hover {
+    opacity: 1;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 10px;
+}
+
+/* Auth Formları */
+form.signup,
+form.login {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--white-1);
+    border-radius: 4px;
+    border: 1px dashed var(--primary);
+}
+
+form.signup h3,
+form.login h3 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.create {
+    border: 2px dashed var(--primary);
+    border-radius: 4px;
+    padding: 20px 25px;
+    background-color: var(--white-1);
+}
+
+.create h3 {
+    font-size: 1.2em;
+    color: var(--primary);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    padding: 20px;
+    color: var(--primary);
+    z-index: 9999 !important;
+}
+
+.loading::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 4px solid transparent;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.powered-by {
+    background: var(--white-1);
+    padding-bottom: 10px;
+    color: var(--gray);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0.8em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.powered-by a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: ease-in 200ms;
+}
+
+.powered-by a:hover {
+    color: var(--error);
+}
