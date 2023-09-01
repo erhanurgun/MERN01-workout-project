@@ -44,7 +44,7 @@ const WorkoutForm = () => {
             setReps("");
             setError(null);
             setEmptyFields([]);
-            console.log("yeni egzersiz eklendi", json);
+            // console.log("yeni egzersiz eklendi", json);
             dispatch({type: "CREATE_WORKOUT", payload: json});
         }
     };
