@@ -46,7 +46,7 @@ const WorkoutDetails = ({workout}) => {
             <p>
                 {formatDistanceToNow(new Date(workout.createdAt), {addSuffix: true, locale: tr})} eklendi
             </p>
-            <span className="material-symbols-outlined del" onClick={handleClick}>delete</span>
+            <span className="material-symbols-outlined del" onClick={handleClick}>x</span>
         </div>
     );
 };

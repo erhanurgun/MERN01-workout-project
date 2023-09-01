@@ -76,7 +76,7 @@ const WorkoutForm = () => {
                 type="number"
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
-                placeholder="lütfen tekrar giriniz!"
+                placeholder="lütfen tekrar sayısı giriniz!"
                 className={emptyFields.includes("reps") ? "error" : ""}
             />
 
