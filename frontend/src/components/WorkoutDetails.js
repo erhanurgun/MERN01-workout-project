@@ -16,7 +16,7 @@ const WorkoutDetails = ({workout}) => {
         }
         let alert = window.confirm("Silme işlemini onaylıyor musunuz?");
         if (alert) {
-            const response = await fetch(`/api/v1/workouts/${workout._id}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/workouts/${workout._id}`, {
                 method: "DELETE",
                 mode: process.env.REACT_APP_CORS_MODE,
                 headers: {
