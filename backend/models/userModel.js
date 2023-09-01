@@ -26,7 +26,7 @@ userSchema.statics.signup = async function (email, password) {
         throw Error("Geçerli bir e-posta adresi giriniz!");
     }
     if (!validator.isStrongPassword(password)) {
-        throw Error("Şifreniz en az 8 karakterden oluşmalıdır!");
+        throw Error("Lütfen daha güçlü bir şifre giriniz! ör: UsD3m004!");
     }
 
     const exists = await this.findOne({email});

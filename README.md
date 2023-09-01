@@ -96,18 +96,17 @@ E-Posta: client@urgun.xyz
 ```
 
 #### 3. Postman ile API'yi test etmek için aşağıdaki adrese gidiniz
-+ Önce `./_/json/postman_collection.json` dosyasını `Postman` programına import edin.
++ Önce `./_/json/postman_collection.json` dosyasını `Postman` programına import edin. ( `API | MERN Workout App` isimli bir `Collection` oluşacaktır.)
 ![Postman](/_/img/ss14.png)
-+ Daha sonra `./_/json/postman_environment.json` dosyasını `Postman` programına import edin.
++ Daha sonra `./_/json/postman_environment.json` dosyasını `Postman` programına import edin. Ardından şekildeki gibi seçili duruma getirin. ( `.ENV - RESTful API | Workout App` isimli bir `Environment` oluşacaktır. )
 ![Postman](/_/img/ss15.png)
-+ Bu işlemleri yaptıktan sonra `Postman` programında `MERN | Workout API` isimli bir `Collection` oluşacaktır.
-![Postman](/_/img/ss16.png)
 + Environtment için gerekli ayarları yaptıktan sonra, `kullanıcı adı` ve `şifre` alanlarını doldurup giriş yapın.
+![Postman](/_/img/ss16.png)
++ Giriş işlemini yaptıktan sonra `JSON` olarak dönen ilgili **token** bilgisini **kopyalayıp** `environtment` alanında ki `TOKEN` alanına yapıştırın. Diğer alanları da şekildeki gibi doldurun.
 ![Postman](/_/img/ss17.png)
-+ Giriş işlemini yaptıktan sonra `environtment` alanında ki `TOKEN` alanına ilgili token bilgisini **kopyalayıp** yapıştırın.
++ Bazen import işleminde `TOKEN` kısmında sorun oluşabiliyor. Aşağıdaki gibi kontrol sağlayabilirsiniz.
 ![Postman](/_/img/ss18.png)
 + Artık API'yi kullanmaya başlayabilirsiniz.
-![Postman](/_/img/ss19.png)
 
 #### 4. Swagger ile API'yi test etmek için aşağıdaki adrese gidiniz
 ```bash
@@ -117,8 +116,8 @@ http://localhost:3000/api/v1/docs
 http://node.test/api/v1/docs
 ```
 + `node.test` adresini kullanabilmek için bunu `hosts` dosyasına eklemeniz gerekmektedir.
-+ Aşağıdaki gibi bir ekran göreceksiniz. 
-![Swagger](/_/img/ss20.png)
++ Dökümantasyon sayfası aşağıdaki gibi olacaktır.
+![Swagger](/_/img/ss19.png)
 
 ## Destek
 + [İletişim](https://erhanurgun.com.tr) iletişim sayfasından benimle iletişime geçebilirsiniz.

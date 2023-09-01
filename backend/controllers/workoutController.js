@@ -71,7 +71,7 @@ const deleteWorkout = async (req, res) => {
         return res.status(404).json({error: "Egzersiz bulunamadı!"});
     }
 
-    res.status(200).json(workout);
+    res.status(200).json({message: "Egzersiz başarıyla silindi!"});
 };
 // update a workout
 const updateWorkout = async (req, res) => {
@@ -92,7 +92,11 @@ const updateWorkout = async (req, res) => {
         return res.status(404).json({error: "Egzersiz bulunamadı!"});
     }
 
-    res.status(200).json(workout);
+    const updatedWorkout = {...workout._doc, ...req.body};
+    updatedWorkout.load = Number(updatedWorkout.load);
+    updatedWorkout.reps = Number(updatedWorkout.reps);
+
+    res.status(200).json(updatedWorkout);
 };
 
 export {

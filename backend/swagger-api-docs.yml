@@ -1,0 +1,59 @@
+openapi: "3.0.3"
+info:
+  title: "Workout Tracker API"
+  description: "Egzersizlerinizi kaydedebileceğiniz bir uygulama."
+  version: "1.0.0"
+servers:
+  - url: "https://localhost:4000"
+paths:
+  /api/v1/user/login:
+    post:
+      summary: "POST api/v1/user/login"
+      responses:
+        "200":
+          description: "OK"
+  /api/v1/user/signup:
+    post:
+      summary: "POST api/v1/user/signup"
+      responses:
+        "200":
+          description: "OK"
+  /api/v1/workouts:
+    get:
+      summary: "GET api/v1/workouts"
+      responses:
+        "200":
+          description: "OK"
+    post:
+      summary: "POST api/v1/workouts"
+      responses:
+        "200":
+          description: "OK"
+  /api/v1/workouts/{id}:
+    get:
+      summary: "GET api/v1/workouts/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: false
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE api/v1/workouts/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: false
+      responses:
+        "200":
+          description: "OK"
+    patch:
+      summary: "PATCH api/v1/workouts/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: false
+      responses:
+        "200":
+          description: "OK"
