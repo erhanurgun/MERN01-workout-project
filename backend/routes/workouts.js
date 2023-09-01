@@ -1,4 +1,3 @@
-import "dotenv/config";
 import express from "express";
 import {
     createWorkout,
@@ -15,18 +14,18 @@ const router = express.Router();
 router.use(requireAuth);
 
 // GET all workouts
-router.get(process.env.BASE_URL + "/", getWorkouts);
+router.get("/", getWorkouts);
 
 // GET a single workouts
-router.get(process.env.BASE_URL + "/:id", getWorkout);
+router.get("/:id", getWorkout);
 
 // POST a new workout
-router.post(process.env.BASE_URL + "/", createWorkout);
+router.post("/", createWorkout);
 
 // DELETE a new workout
-router.delete(process.env.BASE_URL + "/:id", deleteWorkout);
+router.delete("/:id", deleteWorkout);
 
 // UPDATE a new workout
-router.patch(process.env.BASE_URL + "/:id", updateWorkout);
+router.patch("/:id", updateWorkout);
 
 export default router;

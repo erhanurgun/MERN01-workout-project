@@ -1,5 +1,4 @@
 import { createContext, useReducer } from "react";
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 export const WorkoutsContext = createContext();
 

@@ -1,3 +1,4 @@
+import "dotenv/config";
 import {useWorkoutsContext} from "../hooks/useWorkoutsContext";
 import {useAuthContext} from "../hooks/useAuthContext";
 
@@ -15,8 +16,9 @@ const WorkoutDetails = ({workout}) => {
         }
         let alert = window.confirm("Silme işlemini onaylıyor musunuz?");
         if (alert) {
-            const response = await fetch("/api/v1/workouts/" + workout._id, {
+            const response = await fetch(`/api/v1/workouts/${workout._id}`, {
                 method: "DELETE",
+                mode: process.env.REACT_APP_CORS_MODE,
                 headers: {
                     Authorization: `Bearer ${user.token}`,
                 },

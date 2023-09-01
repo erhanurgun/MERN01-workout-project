@@ -1,37 +1,41 @@
-import { useState } from "react";
-import { useAuthContext } from "./useAuthContext";
+import "dotenv/config";
+import {useState} from "react";
+import {useAuthContext} from "./useAuthContext";
 
 export const useLogin = () => {
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
-  const { dispatch } = useAuthContext();
 
-  const login = async (email, password) => {
-    setIsLoading(true);
-    setError(null);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(null);
+    const {dispatch} = useAuthContext();
 
-    const response = await fetch("/api/v1/user/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-    const json = await response.json();
+    const login = async (email, password) => {
+        setIsLoading(true);
+        setError(null);
 
-    if (!response.ok) {
-      setIsLoading(false);
-      setError(json.error);
-    }
-    if (response.ok) {
-      // save the user to local storage
-      localStorage.setItem("user", JSON.stringify(json));
+        const response = await fetch(`/api/v1/user/login`, {
+            method: "POST",
+            mode: process.env.REACT_APP_CORS_MODE,
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({email, password}),
+        });
+        const json = await response.json();
+        console.log(json);
 
-      // update the auth context
-      dispatch({ type: "LOGIN", payload: json });
+        if (!response.ok) {
+            setIsLoading(false);
+            setError(json.error);
+        }
+        if (response.ok) {
+            // save the user to local storage
+            localStorage.setItem("user", JSON.stringify(json));
 
-      // update loading state
-      setIsLoading(false);
-    }
-  };
+            // update the auth context
+            dispatch({type: "LOGIN", payload: json});
 
-  return { login, isLoading, error };
+            // update loading state
+            setIsLoading(false);
+        }
+    };
+
+    return {login, isLoading, error};
 };
