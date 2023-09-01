@@ -1,9 +1,10 @@
 import Workout from "../models/workoutModel.js";
 import mongoose from "mongoose";
 
+
 // get all workout
 const getWorkouts = async (req, res) => {
-    const userId = req.user._id;
+    const userId = req.user ? req.user._id : null;
     const workouts = await Workout.find({userId}).sort({createdAt: -1});
 
     res.status(200).json(workouts);
@@ -71,7 +72,7 @@ const deleteWorkout = async (req, res) => {
         return res.status(404).json({error: "Egzersiz bulunamadı!"});
     }
 
-    res.status(200).json({message: "Egzersiz başarıyla silindi!"});
+    res.status(200).json({...workout._doc, message: "Egzersiz başarıyla silindi!"});
 };
 // update a workout
 const updateWorkout = async (req, res) => {
