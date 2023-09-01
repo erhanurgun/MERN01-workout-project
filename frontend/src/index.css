@@ -217,6 +217,14 @@ div.error {
     opacity: 0.8;
 }
 
+.edit {
+    background: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--white-2) !important;
+    opacity: 0.8;
+    margin-right: 44px;
+}
+
 :hover {
     opacity: 1;
 }
