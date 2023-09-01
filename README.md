@@ -1,8 +1,7 @@
 # MERN - Egzersiz Takip Projesi
 
 ### Giriş
-+ Bu proje, deneme amaçlı olarak oluşturulmuştur.
-+ [Dosya Yapısı](https://github.com/erhanurgun/MERN01-workout-project/blob/main/_/md/file-structure.md) hakkında bilgi almak için tıklayınız.
++ Bu proje, MERN mimarisini pekiştirme amaçlı olarak oluşturulmuştur.
 
 ## Kurulum
 
