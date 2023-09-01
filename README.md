@@ -82,7 +82,7 @@ http://node.test
 + Bu alanda `kullanıcı adı` ve `şifre` alanlarını doldurup bir kullanıcı oluşturun.
 ![Web App](/_/img/ss11.png)
 + Bu ekranı gördüğünüzde artık kullanmaya başlayabilirsiniz.
-![Web App](/_/img/ss12.png)
+![Web App](/_/img/ss12.1.png)
 + Mobil cihazlarda da aynı şekilde kullanabilirsiniz.
 - ![Web App](/_/img/ss13.png)
 
