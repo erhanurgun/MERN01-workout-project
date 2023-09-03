@@ -14,22 +14,22 @@ const WorkoutDetails = ({workout}) => {
         if (!user) {
             return;
         }
-        let alert = window.confirm("Silme işlemini onaylıyor musunuz?");
-        if (alert) {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/workouts/${workout._id}`, {
-                method: "DELETE",
-                mode: process.env.REACT_APP_CORS_MODE,
-                headers: {
-                    Authorization: `Bearer ${user.token}`,
-                },
-            });
+        // let alert = window.confirm("Silme işlemini onaylıyor musunuz?");
+        // if (alert) {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/workouts/${workout._id}`, {
+            method: "DELETE",
+            mode: process.env.REACT_APP_CORS_MODE,
+            headers: {
+                Authorization: `Bearer ${user.token}`,
+            },
+        });
 
-            const json = await response.json();
+        const json = await response.json();
 
-            if (response.ok) {
-                dispatch({type: "DELETE_WORKOUT", payload: json});
-            }
+        if (response.ok) {
+            dispatch({type: "DELETE_WORKOUT", payload: json});
         }
+        // }
     };
 
     return (
