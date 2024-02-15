@@ -56,14 +56,14 @@ SECRET=     # JWT için gerekli gizli anahtar. ( Herhangi bir şey olabilir. ör
 PORT=       # Backend için kullanılacak port numarası.
 ```
 
-### 6. PROXY'i düzenleyin
+### 6. PROXY'yi düzenleyin
 ```config
 {
   "proxy": "https://workout-tracker-app-jkr8.onrender.com",
   "...":"..."
 }
 ```
-- `frontend/package.json` içindeki `proxy` alanını boş kendinize göre düzenleyiniz.
+- `frontend/package.json` içindeki `proxy` alanını kendinize göre düzenleyiniz.
 
 ## Kullanım
 
